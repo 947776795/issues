@@ -22,18 +22,24 @@ const homeTabsEum = {
   return (
     <>
       <div>home</div>
-      {/* <Link href="/about/123">
-        to about
-      </Link> */}
+      <br />
       <div onClick={jump}>jump</div>
+      <br />
+      <div>tabNavbar</div>
       {
         Object.keys(homeTabsEum).map((key) => {
           return (
-            <div key={key} onClick={() => setActiveKey(key)}>{key}</div>
+            <div key={key} onClick={() => setActiveKey(key)}>
+              {key}
+            </div>
           )
         })
       }
-      <div>{activeKey}</div>
+      <br />
+      tabNavContent
+      <div>
+        {activeKey}
+      </div>
     </>
   )
 }
