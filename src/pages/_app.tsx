@@ -1,6 +1,14 @@
 import '@/styles/globals.css'
 import type { AppProps } from 'next/app'
+import { useRouter } from 'next/router';
+import { KeepAliveProvider } from 'react-next-keep-alive';
+
 
 export default function App({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+  const router = useRouter();
+  return (
+    <KeepAliveProvider router={router}>
+      <Component {...pageProps} />
+    </KeepAliveProvider>
+  )
 }
